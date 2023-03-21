@@ -29,7 +29,7 @@ class TackleBoxItemsController < ApplicationController
 
     @bait.my_tackle_box_item = @item
 
-    render(@bait)
+    # render(@bait)
     # redirect_to baits_url
   end
 
@@ -38,7 +38,7 @@ class TackleBoxItemsController < ApplicationController
     @item.destroy
 
     @bait = @item.bait
-    render(@bait)
+    # render(@bait)
     # redirect_to baits_url
   end
 

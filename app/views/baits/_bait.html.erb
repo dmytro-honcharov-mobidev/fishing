@@ -1,4 +1,4 @@
-<%= turbo_frame_tag(bait) do%>
+<%= tag.div id: dom_id(bait) do%>
 <div class="bait">
   <%= current_second %>
   <%= link_to image_tag(bait.image), bait, data: {turbo_frame: '_top'} %>
