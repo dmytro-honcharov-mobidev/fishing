@@ -1,0 +1,7 @@
+deploy_user: ubuntu
+deploy_folder: /home/{{deploy_user}}/fishing
+domain: fishing.dmytrokalan.pp.ua
+certbot_email: dimko.goncharov@gmail.com
+app_image: 'dimkohoncharov/fishing'
+app_replicas_number: 1
+stack_name: fishing

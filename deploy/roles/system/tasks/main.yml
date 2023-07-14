@@ -1,0 +1,19 @@
+- name: Install required system packages
+  ansible.builtin.apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+    update_cache: true
+
+- name: Create application directory
+  ansible.builtin.shell: |
+    mkdir -p {{ deploy_folder }}/logs
+
+- name: Install docker stack file
+  template: src=docker-stack.yml.j2 dest={{ deploy_folder }}/docker-stack.yml owner={{ deploy_user }} group={{ deploy_user }} mode=0644
+

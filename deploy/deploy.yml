@@ -1,0 +1,19 @@
+---
+- name: "Deploy Fishing project"
+  hosts: masters:workers
+  become: true
+  vars_files:
+    - ./vars/settings.yml
+  tasks:
+    - name: Prune previous images
+      ansible.builtin.command: docker image prune -f
+
+- name: "Update stack"
+  hosts: masters
+  become: true
+  vars_files:
+    - ./vars/settings.yml
+  tasks:
+    - name: Deploy stack
+      ansible.builtin.command:
+        docker stack deploy -c {{ deploy_folder }}/docker-stack.yml {{ stack_name }}

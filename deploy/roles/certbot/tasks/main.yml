@@ -1,0 +1,26 @@
+- name: Install Certbot
+  ansible.builtin.apt:
+    pkg:
+      - certbot
+      - python3-certbot-nginx
+    update_cache: true
+
+- name: Register certbot
+  ansible.builtin.shell: |
+      certbot -n register --agree-tos --email {{certbot_email}}
+      touch /etc/letsencrypt/.registered
+  args:
+    creates: /etc/letsencrypt/.registered
+
+- name: Setup cronjob for renewal
+  ansible.builtin.cron:
+    name: certbot-renewal
+    job: "/bin/sh -lc '/usr/bin/certbot -q renew'"
+    minute: 0
+    hour: 23
+
+- name: Get SSL certificate
+  command: '/usr/bin/certbot -n --nginx certonly -d {{ domain }}'
+  args:
+    creates: '/etc/letsencrypt/live/{{ domain }}'
+  ignore_errors: true

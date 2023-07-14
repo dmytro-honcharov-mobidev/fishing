@@ -49,16 +49,11 @@ lefthook-local.yml
 .vscode
 .env
 config/Master.key
-public/demo_db_lead_score/demo/Credit Card Defaulter Prediction/Credit Card Defaulter Prediction_test.csv
-public/demo_db_lead_score/demo/Credit Card Defaulter Prediction/Credit Card Defaulter Prediction_train.csv
-public/demo_db_lead_score/demo/heart_failure/hear_failure_test.csv
-public/demo_db_lead_score/demo/heart_failure/heart_failure_clinical_records_dataset.csv
-public/demo_db_lead_score/demo/Loan Prediction Based on Customer Behavior/Test Data.csv
-public/demo_db_lead_score/demo/Loan Prediction Based on Customer Behavior/Training Data.csv
-public/demo_db_lead_score/demo/stroke/healthcare-dataset-stroke-data.csv
-public/demo_db_lead_score/demo/stroke/stroke_test.csv
-public/demo_db_lead_score/demo/titanic/test_titanic.csv
-public/demo_db_lead_score/demo/titanic/titanic.csv
 
 .idea
 .DS_Store
+
+deploy/keys/*
+!deploy/keys/.keep
+deploy/.terraform
+deploy/.terraform.lock.hcl
