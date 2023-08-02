@@ -11,8 +11,6 @@ services:
       - .:/app:cached
     environment:
       - RAILS_ENV=${RAILS_ENV:-development}
-    ports:
-      - "3000:3000"
   nginx-proxy:
     image: nginx:latest
     ports:
