@@ -57,3 +57,6 @@ deploy/keys/*
 !deploy/keys/.keep
 deploy/.terraform
 deploy/.terraform.lock.hcl
+
+.vagrant
+ubuntu-bionic-18.04-cloudimg-console.log
